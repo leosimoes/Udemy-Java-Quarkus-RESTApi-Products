@@ -63,6 +63,13 @@ testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 - Rebuild the project.
 - Annotate the `ProductEntity` class with `@Data`, `@NoArgsConstructo` and `@AllArgsConstructor`.
 
+7. Create the `ProductDTO` class:
+- inside the `dtos` package;
+- attributes must be of type `String`: `name`, `description`, `category`, `model`, `price`.
+- use `@Data`, `@NoArgsConstructo` and `@AllArgsConstructor` notations.
+
+![Class-ProductDTO](/imgs/Img-6-Class-ProductDTO-b.jpg)
+
 
 ## References
 Udemy - Quarkus Framework with REST APIs - Vinícius Pereira de Oliveira:

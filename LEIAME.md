@@ -63,6 +63,13 @@ testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 - Rebuild o projeto.
 - Anote a classe `ProductEntity` com `@Data`,`@NoArgsConstructo` e `@AllArgsConstructor`.
 
+7. Criar a classe `ProductDTO`:
+- dentro do pacote `dtos`;
+- os atributos devem ser do tipo `String`: `name`, `description`, `category`, `model`, `price`.
+- usar notações `@Data`,`@NoArgsConstructo` e `@AllArgsConstructor`.
+
+![Class-ProductDTO](/imgs/Img-6-Class-ProductDTO-b.jpg)
+
 
 ## Referências
 Udemy - Quarkus Framework com API's REST - Vinícius Pereira de Oliveira:
