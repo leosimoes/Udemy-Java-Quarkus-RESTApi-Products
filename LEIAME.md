@@ -48,7 +48,25 @@ Projeto do curso "Quarkus Framework com API's REST" da Udemy: API Rest de Produt
 
 ![Class-ProductEntity](/imgs/Img-4-Class-ProductEntity-b.jpg)
 
+6. Adicionar Lombok:
+- Em `build.gradle` adicione as dependências do Lombok:
+```
+compileOnly 'org.projectlombok:lombok:1.18.28'
+annotationProcessor 'org.projectlombok:lombok:1.18.28'
+testCompileOnly 'org.projectlombok:lombok:1.18.28'
+testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+```
+- Instale o plugin do Lombok no IntelliJ.
+
+![IntelliJ-Plugin-Lombok](/imgs/Img-5-IntelliJ-Plugin-Lombok.jpg)
+
+- Rebuild o projeto.
+- Anote a classe `ProductEntity` com `@Data`,`@NoArgsConstructo` e `@AllArgsConstructor`.
+
 
 ## Referências
 Udemy - Quarkus Framework com API's REST - Vinícius Pereira de Oliveira:
 https://www.udemy.com/course/quarkus-rest-api/ , acessado em 16/09/2023.
+
+Project Lombok - Setup - Gradle:
+https://projectlombok.org/setup/gradle , acessado em 16/09/2023.
