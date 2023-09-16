@@ -35,6 +35,8 @@ Udemy's "Quarkus Framework with REST APIs" course project: Product Rest API.
 
 ![Run-Project](/imgs/Img-3-Run.jpg)
 
+4. Configure the database (H2) in `application.properties`.
+
 
 ## References
 Udemy - Quarkus Framework with REST APIs - Vinícius Pereira de Oliveira:
