@@ -37,6 +37,17 @@ Projeto do curso "Quarkus Framework com API's REST" da Udemy: API Rest de Produt
 
 4. Configure o banco de dados (H2) em `application.properties`
 
+5. Criar a classe `ProductEntity`:
+- dentro do pacote `entities`;
+- anotar com `@Entity`, `@Table`;
+- o nome da tabela deve ser "product";
+- os atributos devem ser: `id`, `name`, `description`, `category`, `model`, `price`, `creationDate`, `updateDate`.
+- O `id` deve ser anotado com `@Id` e `@GeneratedValue`.
+- O `creationDate` deve ser anotado com `@CreationTimestamp`.
+- O `updateDate` deve ser anotado com `@UpdateTimestamp`.
+
+![Class-ProductEntity](/imgs/Img-4-Class-ProductEntity-b.jpg)
+
 
 ## Referências
 Udemy - Quarkus Framework com API's REST - Vinícius Pereira de Oliveira:
