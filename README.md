@@ -117,6 +117,20 @@ annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
 ![Class-ProductService](/imgs/Img-8-Class-ProductService.jpg)
 
+12. Create the `ProductResource` class:
+- inside the `resources` package;
+- use annotation `@Path("/api/products")`, `@Produces(MediaType.APPLICATION_JSON)` and `@Consumes(MediaType.APPLICATION_JSON)`
+  For the class;
+- add the attribute `private final ProductService productService`;
+- the constructor must receive `productService` and be annotated with `@Inject`;
+- create methods `createProduct()`, `getAllProducts()`, `getProductById()`, `updateProduct()`, `deleteProduct()`;
+- public methods must be annotated according to the HTTP verb they implement: `GET`, `POST`, `PUT` or `DELETE`;
+- some methods must be annotated with `@Path("/{id}")`.
+
+![Class-ProductResource](/imgs/Img-9-Class-ProductResource-b.jpg)
+
+13. Test the API at http://localhost:8080/q/swagger-ui/
+
 
 ## References
 Udemy - Quarkus Framework with REST APIs - Vinícius Pereira de Oliveira:

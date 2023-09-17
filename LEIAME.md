@@ -111,11 +111,25 @@ annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 - dentro do pacote `services`;
 - usar anotação `@ApplicationScoped`;
 - adicionar atributos `private final ProductRepository productRepository` e `private final ProductMapper productMapper`;
-- o construtor deve receber os dosi atributos e ser anotado com `@Inject`;
+- o construtor deve receber os dois atributos e ser anotado com `@Inject`;
 - criar métodos `createProduct`, `getAllProducts`, `getProductById`, `updateProduct`, `deleteProduct`;
 - alguns do métodos, ou a classe, devem ser anotados `@Transactional`.
 
 ![Class-ProductService](/imgs/Img-8-Class-ProductService.jpg)
+
+12. Criar a classe `ProductResource`:
+- dentro do pacote `resources`;
+- usar anotação `@Path("/api/products")`, `@Produces(MediaType.APPLICATION_JSON)` e `@Consumes(MediaType.APPLICATION_JSON)` 
+para a classe;
+- adicionar o atributo `private final ProductService productService`;
+- o construtor deve receber `productService` e ser anotado com `@Inject`;
+- criar métodos `createProduct()`, `getAllProducts()`, `getProductById()`, `updateProduct()`, `deleteProduct()`;
+- os métodos públicos devem ser anotados de acordo com o verbo HTTP que implementam: `GET`, `POST`, `PUT` ou `DELETE`;
+- alguns os métodos devem ser anotados com `@Path("/{id}")`.
+
+![Class-ProductResource](/imgs/Img-9-Class-ProductResource-b.jpg)
+
+13. Testar a API em http://localhost:8080/q/swagger-ui/
 
 
 ## Referências
