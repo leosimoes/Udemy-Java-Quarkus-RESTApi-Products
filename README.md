@@ -36,6 +36,15 @@ Udemy's "Quarkus Framework with REST APIs" course project: Product Rest API.
 ![Run-Project](/imgs/Img-3-Run.jpg)
 
 4. Configure the database (H2) in `application.properties`.
+````
+# H2 Database Configuration
+quarkus.datasource.db-kind=h2
+quarkus.datasource.jdbc.driver=org.h2.Driver
+quarkus.datasource.username=usuario
+quarkus.datasource.password=senha
+quarkus.datasource.jdbc.url=jdbc:h2:mem:default
+quarkus.hibernate-orm.database.generation=drop-and-create
+````
 
 5. Create the `ProductEntity` class:
 - inside the `entities` package;
@@ -90,6 +99,18 @@ annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 - put attribute `ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);`;
 
 ![Interface-ProductMapper](/imgs/Img-7-Interface-ProductMapper.jpg)
+
+10. Create the `ProductRepository` interface:
+- inside the `repositories` package;
+- extends `PanacheRepository<ProductEntity>`;
+- see step 4;
+- see step 11.
+
+11. (Alternative to step 10) Create the `ProductRepository` class:
+- annotate with `@ApplicationScoped`;
+- `public class ProductRepository implements PanacheRepository<ProductEntity> {}`;
+- can be used for custom queries implementing methods;
+- see step 4.
 
 
 ## References
