@@ -45,6 +45,7 @@ Udemy's "Quarkus Framework with REST APIs" course project: Product Rest API.
 - The `id` must be annotated with `@Id` and `@GeneratedValue`.
 - The `creationDate` must be annotated with `@CreationTimestamp`.
 - The `updateDate` must be annotated with `@UpdateTimestamp`.
+- See step 8.
 
 ![Class-ProductEntity](/imgs/Img-4-Class-ProductEntity-b.jpg)
 
@@ -69,6 +70,11 @@ testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 - use `@Data`, `@NoArgsConstructo` and `@AllArgsConstructor` notations.
 
 ![Class-ProductDTO](/imgs/Img-6-Class-ProductDTO-b.jpg)
+
+8Update the `ProductEntity` class:
+- annotate the class with `@Builder`;
+- the class must extend `PanacheEntity`;
+- remove or comment out the explicit declaration of `id`.
 
 
 ## References

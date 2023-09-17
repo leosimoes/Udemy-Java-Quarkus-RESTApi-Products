@@ -45,6 +45,7 @@ Projeto do curso "Quarkus Framework com API's REST" da Udemy: API Rest de Produt
 - O `id` deve ser anotado com `@Id` e `@GeneratedValue`.
 - O `creationDate` deve ser anotado com `@CreationTimestamp`.
 - O `updateDate` deve ser anotado com `@UpdateTimestamp`.
+- ver passo 8.
 
 ![Class-ProductEntity](/imgs/Img-4-Class-ProductEntity-b.jpg)
 
@@ -66,9 +67,14 @@ testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 7. Criar a classe `ProductDTO`:
 - dentro do pacote `dtos`;
 - os atributos devem ser do tipo `String`: `name`, `description`, `category`, `model`, `price`.
-- usar notações `@Data`,`@NoArgsConstructo` e `@AllArgsConstructor`.
+- usar anotações `@Data`,`@NoArgsConstructo` e `@AllArgsConstructor`.
 
 ![Class-ProductDTO](/imgs/Img-6-Class-ProductDTO-b.jpg)
+
+8. Atualize a classe `ProductEntity`:
+- anote a classe com `@Builder`;
+- a classe deve extender `PanacheEntity`;
+- remove ou comente a declaração explícita de `id`.
 
 
 ## Referências
