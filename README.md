@@ -100,13 +100,7 @@ annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
 ![Interface-ProductMapper](/imgs/Img-7-Interface-ProductMapper.jpg)
 
-10. Create the `ProductRepository` interface:
-- inside the `repositories` package;
-- extends `PanacheRepository<ProductEntity>`;
-- see step 4;
-- see step 11.
-
-11. (Alternative to step 10) Create the `ProductRepository` class:
+10. Create the `ProductRepository` class:
 - annotate with `@ApplicationScoped`;
 - `public class ProductRepository implements PanacheRepository<ProductEntity> {}`;
 - can be used for custom queries implementing methods;
