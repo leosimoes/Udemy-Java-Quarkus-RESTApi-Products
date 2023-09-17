@@ -101,10 +101,21 @@ annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 ![Interface-ProductMapper](/imgs/Img-7-Interface-ProductMapper.jpg)
 
 10. Criar a classe `ProductRepository`:
-- anotar com `@ApplicationScoped`;
+- dentro do pacote `repositories`;
+- usar anotação `@ApplicationScoped`;
 - `public class ProductRepository implements PanacheRepository<ProductEntity> {}`;
 - pode ser usado para consultas personalizadas implementando métodos;
 - ver passo 4.
+
+11. Criar a classe `ProductService`:
+- dentro do pacote `services`;
+- usar anotação `@ApplicationScoped`;
+- adicionar atributos `private final ProductRepository productRepository` e `private final ProductMapper productMapper`;
+- o construtor deve receber os dosi atributos e ser anotado com `@Inject`;
+- criar métodos `createProduct`, `getAllProducts`, `getProductById`, `updateProduct`, `deleteProduct`;
+- alguns do métodos, ou a classe, devem ser anotados `@Transactional`.
+
+![Class-ProductService](/imgs/Img-8-Class-ProductService.jpg)
 
 
 ## Referências
