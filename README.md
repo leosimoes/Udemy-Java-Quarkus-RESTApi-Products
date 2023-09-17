@@ -71,10 +71,25 @@ testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 
 ![Class-ProductDTO](/imgs/Img-6-Class-ProductDTO-b.jpg)
 
-8Update the `ProductEntity` class:
+8. Update the `ProductEntity` class:
 - annotate the class with `@Builder`;
 - the class must extend `PanacheEntity`;
 - remove or comment out the explicit declaration of `id`.
+
+9. Create the `ProductMapper` interface:
+- In `build.gradle` add the MapStruct dependencies:
+```
+implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+```
+- rebuild the project.
+- inside the `mappers` package;
+- use `@Mapper` annotation;
+- declare the methods `ProductDTO toDTO(ProductEntity productEntity)` and `ProductEntity toEntity(ProductDTO productDTO)`;
+- declare the methods `List<ProductDTO> toDTOList(List<ProductEntity> productEntities);` and `List<ProductEntity> toEntityList(List<ProductDTO> productDTOs);`
+- put attribute `ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);`;
+
+![Interface-ProductMapper](/imgs/Img-7-Interface-ProductMapper.jpg)
 
 
 ## References
@@ -83,3 +98,6 @@ https://www.udemy.com/course/quarkus-rest-api/, accessed on 09/16/2023.
 
 Project Lombok - Setup - Gradle:
 https://projectlombok.org/setup/gradle , accessed on 09/16/2023.
+
+MapStruct - Documentation - Installation:
+https://mapstruct.org/documentation/installation/ , accessed on 09/16/2023.

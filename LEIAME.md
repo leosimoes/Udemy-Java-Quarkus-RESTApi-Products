@@ -76,6 +76,21 @@ testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 - a classe deve extender `PanacheEntity`;
 - remove ou comente a declaração explícita de `id`.
 
+9. Criar a interface `ProductMapper`:
+- Em `build.gradle` adicione as dependências do MapStruct:
+```
+implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+```
+- rebuild o projeto.
+- dentro do pacote `mappers`;
+- usar anotação `@Mapper`;
+- declarar os métodos `ProductDTO toDTO(ProductEntity productEntity)` e `ProductEntity toEntity(ProductDTO productDTO)`;
+- declarar os métodos `List<ProductDTO> toDTOList(List<ProductEntity> productEntities);` e `List<ProductEntity> toEntityList(List<ProductDTO> productDTOs);`
+- colocar atributo `ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);`;
+
+![Interface-ProductMapper](/imgs/Img-7-Interface-ProductMapper.jpg)
+
 
 ## Referências
 Udemy - Quarkus Framework com API's REST - Vinícius Pereira de Oliveira:
@@ -83,3 +98,6 @@ https://www.udemy.com/course/quarkus-rest-api/ , acessado em 16/09/2023.
 
 Project Lombok - Setup - Gradle:
 https://projectlombok.org/setup/gradle , acessado em 16/09/2023.
+
+MapStruct - Documentation - Installation:
+https://mapstruct.org/documentation/installation/ , acessado em 16/09/2023.
